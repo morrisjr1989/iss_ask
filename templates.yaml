@@ -1,0 +1,28 @@
+welcome_message: | 
+  <speak>
+  Welcome to Space Walk... The International SpaceStation Locator... To continue, ask... where is the ISS? ... or
+  When will the ISS fly over city, state, or country.
+  </speak>
+
+
+welcome_message_reprompt: 'Hello? To continue, ask: "Where is the ISS?" or "When will the ISS be over city, state, or country? Or say Help Me for further details. '
+
+to_continue:  'To continue, ask me "Where is the ISS?" or "When will the ISS be over a city, state, and country?"'
+
+help: |
+  <speak>
+  You are now at the Spacewalk help desk... to find the current location of the ISS, ask me... where is the ISS?
+  to find when the iss will fly over a certain location ask me ... when will the ISS fly over city, state, or country,
+  for example you can say,  Alexa - when will the iss fly over Atlanta, Georgia.
+  Finally, you can access the credits. Ask me to 'roll credits'.
+  </speak>
+
+credits: |
+  <speak>
+    Skill author is Jeff Morris. This skill was built using many wondeful tools...
+    Flask-ask Python library, written by Jason Wheeler, was used for code development.
+    K-D tree algorithm was implemented using the Reverse GeoCoder library by Ajay Thampi.
+    Thanks to all 100 authors of Geo Python.
+    Ken and the requests library.
+    And Open Notify for its wonderful API.
+  </speak>
