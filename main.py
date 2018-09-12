@@ -102,7 +102,7 @@ def pass_over(my_location):
 
     if fly_over['message'] == 'success':
         rise = fly_over['response'][0]
-        answer = time.strftime('%A, %B %d, %Y at %I:%M %p localtime', time.localtime(rise.get('risetime')))
+        answer = time.strftime('%A, %B %d, %Y at %I:%M %p GMT', time.localtime(rise.get('risetime')))
         a = rise.get('risetime')  # last epoch recorded
         b = time.time()  # current epoch time
         c = a - b  # returns seconds
