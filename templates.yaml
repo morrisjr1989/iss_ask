@@ -26,3 +26,9 @@ credits: |
     Ken and the requests library.
     And Open Notify for its wonderful API.
   </speak>
+
+
+bye: |
+  <speak>
+  Goodbye!
+  </speak>
