@@ -58,13 +58,13 @@ def where_is_the_iss_now():
     for i in filter(lambda d: d.get('Code') == cc, country_cc):
         country_name = i.get('Name')
 
-    location_text = ', '.join([name, admin1, admin2, '...in...', country_name])
+    location_text = ', '.join([name, admin1, country_name])
 
     if distance_miles > 150:
-        answer = 'The International Space Station is {} miles {} off the coast of {}'.format(round(distance_miles, 2), ordinal,
+        answer = 'The International Space Station is {} miles {} off the coast of {}'.format(int(distance_miles), ordinal,
                                                                                           location_text)
     else:
-        answer = 'the International Space Station is {} miles {} near {}'.format(round(distance_miles, 2),ordinal, location_text)
+        answer = 'the International Space Station is {} miles {} near {}'.format(int(distance_miles),ordinal, location_text)
     return answer, latitude, longitude, distance_miles, ordinal, name, admin1, country_name
 
 

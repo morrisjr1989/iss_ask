@@ -1,6 +1,6 @@
 welcome_message: | 
   <speak>
-  Welcome to Space Walk... The International SpaceStation Locator... To continue, ask... where is the ISS? ... or
+  Welcome to Space Walk... An International SpaceStation Locator... To continue: ask... where is the ISS? ... or, ask...
   When will the ISS fly over city, state, or country.
   </speak>
 
@@ -11,8 +11,8 @@ to_continue:  'To continue, ask me "Where is the ISS?" or "When will the ISS be 
 
 help: |
   <speak>
-  You are now at the Spacewalk help desk... to find the current location of the ISS, ask me... where is the ISS?
-  to find when the iss will fly over a certain location ask me ... when will the ISS fly over city, state, or country,
+  You are now at the Spacewalk help desk... to find the current location of the ISS, ask... where is the ISS?
+  to find when the iss will fly over a certain location ask ... when will the ISS fly over city, state, or country,
   for example you can say,  Alexa - when will the iss fly over Atlanta, Georgia.
   Finally, you can access the credits. Ask me to 'roll credits'.
   </speak>
