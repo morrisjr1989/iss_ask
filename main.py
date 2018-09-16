@@ -69,13 +69,13 @@ def where_is_the_iss_now():
     for i in filter(lambda d: d.get('Code') == cc, country_cc):
         country_name = i.get('Name')
 
-    location_text = ', '.join([name, admin1, admin2, '...in...', country_name])
+    location_text = ', '.join([name, admin1, country_name])
 
     if distance_miles > 150:
-        answer = 'The International Space Station is {} miles {} off the coast of {}'.format(round(distance_miles, 2), ordinal,
+        answer = 'The International Space Station is {} miles {} off the coast of {}'.format(int(distance_miles), ordinal,
                                                                                           location_text)
     else:
-        answer = 'the International Space Station is {} miles {} near {}'.format(round(distance_miles, 2),ordinal, location_text)
+        answer = 'the International Space Station is {} miles {} near {}'.format(int(distance_miles),ordinal, location_text)
     return answer, latitude, longitude, distance_miles, ordinal, name, admin1, country_name
 
 
@@ -113,7 +113,7 @@ def pass_over(my_location):
 
     if fly_over['message'] == 'success':
         rise = fly_over['response'][0]
-        answer = time.strftime('%A, %B %d, %Y at %H:%M %p local GMT', time.localtime(rise.get('risetime')))
+        answer = time.strftime('%A, %B %d, %Y at %I:%M %p GMT', time.localtime(rise.get('risetime')))
         a = rise.get('risetime')  # last epoch recorded
         b = time.time()  # current epoch time
         c = a - b  # returns seconds
@@ -136,7 +136,7 @@ def pass_over(my_location):
 
     else:
         answer = "failure"
-    return statement('the next flyover at {} will begin in {} on {}'.format(location_name, time_til_rise, answer))
+    return statement('the next flyover for {} will begin in {} on {}'.format(location_name, time_til_rise, answer))
 
 
 @ask.intent('WhereISS')
@@ -174,12 +174,14 @@ def speak_credits():
 
 @ask.intent('AMAZON.StopIntent')
 def stop():
-    return ''
+    bye_text = render_template('bye')
+    return statement(bye_text)
 
 
 @ask.intent('AMAZON.CancelIntent')
 def cancel():
-    return ''
+    bye_text = render_template('bye')
+    return statement(bye_text)
 
 
 @ask.session_ended
